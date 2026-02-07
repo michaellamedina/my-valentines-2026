@@ -25,8 +25,8 @@ body {
 
 .sprite {
   background-image: url(heartSprite.png);
-  width: 64px;
-  height: 64px;
+  width: 7vh;
+  height: 7vh;
   background-size: 200%;
   display: inline-block;
   background-repeat: no-repeat;
@@ -99,4 +99,23 @@ button:active {
     0px 3px 0px 0px #43334c,
     -3px 0px 0px 0px #43334c,
     0px -3px 0px 0px #43334c;
+}
+
+@media (max-width: 768px) {
+  .sprite {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  button {
+    width: 120px;
+  }
+
+  .container-fluid {
+    padding: 20px !important;
+  }
 }
