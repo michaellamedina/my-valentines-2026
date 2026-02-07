@@ -43,7 +43,11 @@
         <div
           class="col d-flex justify-content-center align-items-center flex-wrap"
         >
-          <button id="noButton" onmouseover="moveButton()" onclick="saysNo()">
+          <button
+            id="noButton"
+            onpointerenter="moveButton(event)"
+            onclick="saysNo()"
+          >
             ˙⟡. No .⟡˙
           </button>
           <button id="yesButton" onclick="saysYes()">˙⟡. Yes .⟡˙</button>
