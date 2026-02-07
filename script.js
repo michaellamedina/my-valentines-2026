@@ -1,0 +1,60 @@
+let hoverCount = 0;
+
+function saysYes() {
+  document.querySelector("h1").innerText = "See you soon! 𐔌՞ ܸ.ˬ.ܸ՞𐦯";
+  alert("I knew you'd say yes! (˶ᵔ ᵕ ᵔ˶)");
+
+  // removes no
+  document.getElementById("noButton").style.display = "none";
+
+  // changes back the sprite
+  document.querySelector(".sprite").style.backgroundImage =
+    "url('heartSprite.png')";
+}
+
+function saysNo() {
+  // change sprite
+  document.querySelector(".sprite").style.backgroundImage =
+    "url('breakSprite.png')";
+
+  alert("What do you mean NO?! .·°՞(っ-ᯅ-ς)՞°·.");
+
+  // removes no
+  document.getElementById("noButton").style.display = "none";
+}
+
+function moveButton() {
+  hoverCount++;
+
+  //   changes the sprite
+  if (hoverCount >= 3) {
+    document.querySelector(".sprite").style.backgroundImage =
+      "url('breakSprite.png')";
+  }
+
+  // counts to 10 and removes no
+  if (hoverCount === 10) {
+    document.getElementById("noButton").style.display = "none";
+
+    alert("Okay fine HMP! I'll hide it so now you have to say YES! (  •̀⤙•́  )");
+    return;
+  }
+
+  // variables
+  const noButton = document.getElementById("noButton");
+  const windowWidth = window.innerWidth;
+  const windowHeight = window.innerHeight;
+  const buttonWidth = noButton.offsetWidth;
+  const buttonHeight = noButton.offsetHeight;
+
+  const maxX = windowWidth - buttonWidth - 20;
+  const maxY = windowHeight - buttonHeight - 20;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  // moves
+  noButton.style.position = "fixed";
+  noButton.style.left = randomX + "px";
+  noButton.style.top = randomY + "px";
+}
