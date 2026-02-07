@@ -17,13 +17,19 @@ function saysNo() {
   document.querySelector(".sprite").style.backgroundImage =
     "url('breakSprite.png')";
 
-  alert("What do you mean NO?! .·°՞(っ-ᯅ-ς)՞°·.");
-
   // removes no
-  document.getElementById("noButton").style.display = "none";
+  setTimeout(() => {
+    alert("What do you mean NO?! .·°՞(っ-ᯅ-ς)՞°·.");
+    document.getElementById("noButton").style.display = "none";
+  }, 100);
 }
 
 function moveButton() {
+  if (event && (event.type === "touchstart" || event.type === "pointerdown")) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   hoverCount++;
 
   //   changes the sprite
@@ -44,8 +50,6 @@ function moveButton() {
   const noButton = document.getElementById("noButton");
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
-  const buttonWidth = noButton.offsetWidth;
-  const buttonHeight = noButton.offsetHeight;
 
   const maxX = windowWidth - noButton.offsetWidth - 20;
   const maxY = windowHeight - noButton.offsetHeight - 20;
@@ -58,8 +62,3 @@ function moveButton() {
   noButton.style.left = randomX + "px";
   noButton.style.top = randomY + "px";
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const noButton = document.getElementById("noButton");
-  noButton.addEventListener("touchstart", moveButton, { passive: false });
-});
