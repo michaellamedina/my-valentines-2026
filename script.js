@@ -24,7 +24,7 @@ function saysNo() {
   }, 100);
 }
 
-function moveButton() {
+function moveButton(event) {
   if (event && (event.type === "touchstart" || event.type === "pointerdown")) {
     event.preventDefault();
     event.stopPropagation();
