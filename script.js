@@ -25,9 +25,8 @@ function saysNo() {
 }
 
 function moveButton(event) {
-  if (event && (event.type === "touchstart" || event.type === "pointerdown")) {
-    event.preventDefault();
-    event.stopPropagation();
+  if (window.innerWidth <= 768) {
+    return;
   }
 
   hoverCount++;
