@@ -47,8 +47,8 @@ function moveButton() {
   const buttonWidth = noButton.offsetWidth;
   const buttonHeight = noButton.offsetHeight;
 
-  const maxX = windowWidth - buttonWidth - 20;
-  const maxY = windowHeight - buttonHeight - 20;
+  const maxX = windowWidth - noButton.offsetWidth - 20;
+  const maxY = windowHeight - noButton.offsetHeight - 20;
 
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
@@ -58,3 +58,8 @@ function moveButton() {
   noButton.style.left = randomX + "px";
   noButton.style.top = randomY + "px";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const noButton = document.getElementById("noButton");
+  noButton.addEventListener("touchstart", moveButton, { passive: false });
+});
