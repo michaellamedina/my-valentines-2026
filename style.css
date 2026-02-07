@@ -103,16 +103,23 @@ button:active {
 
 @media (max-width: 768px) {
   .sprite {
-    width: 10vw;
-    height: 10vw;
+    width: 25vw;
+    height: 25vw;
+    transform: scale(2.5);
+  }
+
+  .d-flex {
+    flex-direction: column !important;
+    gap: 50px !important;
   }
 
   h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.5rem !important;
   }
 
   button {
-    width: 120px;
+    width: 180px;
+    margin: 0 !important;
   }
 
   .container-fluid {
